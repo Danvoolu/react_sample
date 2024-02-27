@@ -8,7 +8,7 @@ const IntersectionObserverTest = () => {
   useEffect(() => {
     const option: IntersectionObserverInit = {
       root: parentRef.current,
-      rootMargin: "-20% 0px",
+      rootMargin: "-15% 0px",
       //threshold: 0,
     };
 
@@ -41,6 +41,9 @@ const IntersectionObserverTest = () => {
       } else {
         // 監視中の要素が交差してない状態ならfalse
         // 監視中の要素が交差していないときの処理
+
+        //下スクロールのときは+1のデータが連動対象で良さそうだが
+        //上スクロールのときは処理を考えないといけない
         console.log("Out", num, `${num + 1}が連動対象にする`);
       }
     });
